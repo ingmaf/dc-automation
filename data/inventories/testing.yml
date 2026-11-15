@@ -1,0 +1,75 @@
+---
+
+all:
+
+  # Hosts
+
+  hosts:
+    hq1dc1lf1:
+      ansible_host: 10.0.2.109
+      ansible_httpapi_port: 44301
+      ansible_port: 2201
+    hq1dc1lf2:
+      ansible_host: 10.0.2.109
+      ansible_httpapi_port: 44302
+      ansible_port: 2202
+    hq1dc1lf3:
+      ansible_host: 10.0.2.109
+      ansible_httpapi_port: 44303
+      ansible_port: 2203
+    hq1dc1lf4:
+      ansible_host: 10.0.2.109
+      ansible_httpapi_port: 44304
+      ansible_port: 2204
+    hq1dc1bl1:
+      ansible_host: 10.0.2.109
+      ansible_httpapi_port: 44331
+      ansible_port: 2231
+    hq1dc1bl2:
+      ansible_host: 10.0.2.109
+      ansible_httpapi_port: 44332
+      ansible_port: 2232
+    hq1dc1sp1:
+      ansible_host: 10.0.2.109
+      ansible_httpapi_port: 44333
+      ansible_port: 2233
+    hq1dc1sp2:
+      ansible_host: 10.0.2.109
+      ansible_httpapi_port: 44334
+      ansible_port: 2234
+
+  # Groups
+
+  children:
+
+  # By role
+
+    spines:
+      hosts:
+        hq1dc1sp1:
+        hq1dc1sp2:
+
+    leaves:
+      hosts:
+        hq1dc1lf1:
+        hq1dc1lf2:
+        hq1dc1lf3:
+        hq1dc1lf4:
+
+    border_leaves:
+      hosts:
+        hq1dc1bl1:
+        hq1dc1bl2:
+
+    # By vendor
+
+    dellemc_enterprise_sonic:
+      hosts:
+        hq1dc1sp1:
+        hq1dc1sp2:
+        hq1dc1lf1:
+        hq1dc1lf2:
+        hq1dc1lf3:
+        hq1dc1lf4:
+        hq1dc1bl1:
+        hq1dc1bl2:
