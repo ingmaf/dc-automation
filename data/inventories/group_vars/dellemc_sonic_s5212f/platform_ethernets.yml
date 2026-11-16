@@ -1,0 +1,99 @@
+---
+platform_ethernets:
+  - index: 1
+    name: Ethernet0
+    mtu: 9100
+    speed: 25000
+    description: ""
+    enabled: false
+  - index: 2
+    name: Ethernet1
+    mtu: 9100
+    speed: 25000
+    description: ""
+    enabled: false
+  - index: 3
+    name: Ethernet2
+    mtu: 9100
+    speed: 25000
+    description: ""
+    enabled: false
+  - index: 4
+    name: Ethernet3
+    mtu: 9100
+    speed: 25000
+    description: ""
+    enabled: false
+  - index: 5
+    name: Ethernet4
+    mtu: 9100
+    speed: 25000
+    description: ""
+    enabled: false
+  - index: 6
+    name: Ethernet5
+    mtu: 9100
+    speed: 25000
+    description: ""
+    enabled: false
+  - index: 7
+    name: Ethernet6
+    mtu: 9100
+    speed: 25000
+    description: ""
+    enabled: false
+  - index: 8
+    name: Ethernet7
+    mtu: 9100
+    speed: 25000
+    description: ""
+    enabled: false
+  - index: 9
+    name: Ethernet8
+    mtu: 9100
+    speed: 25000
+    description: ""
+    enabled: false
+  - index: 10
+    name: Ethernet9
+    mtu: 9100
+    speed: 25000
+    description: ""
+    enabled: false
+  - index: 11
+    name: Ethernet10
+    mtu: 9100
+    speed: 25000
+    description: ""
+    enabled: false
+  - index: 12
+    name: Ethernet11
+    mtu: 9100
+    speed: 25000
+    description: ""
+    enabled: false
+  - index: 13
+    name: Ethernet12
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 14
+    name: Ethernet16
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 15
+    name: Ethernet20
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 16
+    name: eth0
+    mtu: 1500
+    speed: auto
+    description: ""
+    enabled: true
+    mgmt_only: true

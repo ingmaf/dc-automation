@@ -1,12 +1,8 @@
 ---
-host_interfaces:
-  - name: Ethernet1
-    # type: 25g-base-x-sfp28
-    # mtu: 1500
-    # description: "Port 1"
+ethernets:
+  - name: Ethernet12
+    description: "To spine 1"
     enabled: true
-  - name: Ethernet2
-    # type: 25g-base-x-sfp28
-    # mtu: 1500
-    # description: "Port 2"
+  - name: Ethernet16
+    description: "To spine 2"
     enabled: true

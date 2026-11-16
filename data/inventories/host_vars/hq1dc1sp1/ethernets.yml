@@ -1,0 +1,20 @@
+---
+ethernets:
+  - name: Ethernet0
+    description: "To leaf 1"
+    enabled: true
+  - name: Ethernet4
+    description: "To leaf 2"
+    enabled: true
+  - name: Ethernet8
+    description: "To leaf 3"
+    enabled: true
+  - name: Ethernet12
+    description: "To leaf 4"
+    enabled: true
+  - name: Ethernet120
+    description: "To border leaf 1"
+    enabled: true
+  - name: Ethernet124
+    description: "To border leaf 2"
+    enabled: true

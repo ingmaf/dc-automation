@@ -6,5 +6,11 @@
     - name: Task 1
       ansible.builtin.debug:
         msg:
-          - "{{ hardware }}"
-          - "{{ ethernets }}"
+          - "{{ hardware.manufacturer }} {{ hardware.model }}"
+          - "{{ interfaces | selectattr('type', 'defined') | selectattr('type', 'equalto', '100gbase-x-qsfp28') | length }} x 100G"
+          - "{{ interfaces | selectattr('type', 'defined') | selectattr('type', 'equalto', '25gbase-x-sfp28') | length }} x 25G"
+          - "{{ interfaces | selectattr('type', 'defined') | selectattr('type', 'equalto', '10gbase-x-sfpplus') | length }} x 10G"
+          - "{{ interfaces | selectattr('type', 'defined') | selectattr('type', 'equalto', '1000base-t') | length }} x 1G"
+          - "{{ interfaces | selectattr('mgmt_only', 'defined') | length }} x Management"
+          - "Enabled interfaces: {{ interfaces | selectattr('enabled', 'equalto', true) | length }}"
+          - "> {{ interfaces | selectattr('enabled', 'equalto', true) | map(attribute='name') }}"

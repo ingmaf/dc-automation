@@ -1,0 +1,8 @@
+---
+ethernets:
+  - name: Ethernet24
+    description: "To spine 1"
+    enabled: true
+  - name: Ethernet28
+    description: "To spine 2"
+    enabled: true

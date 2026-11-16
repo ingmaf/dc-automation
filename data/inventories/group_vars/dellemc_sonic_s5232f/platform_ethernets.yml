@@ -1,179 +1,213 @@
 ---
-dellemc_enterprise_sonic_on_dell_s5224f_ethernets:
+platform_ethernets:
   - index: 1
     name: Ethernet0
     mtu: 9100
-    speed: 25000
+    speed: 100000
     description: ""
     enabled: false
   - index: 2
-    name: Ethernet1
+    name: Ethernet4
     mtu: 9100
-    speed: 25000
+    speed: 100000
     description: ""
     enabled: false
   - index: 3
-    name: Ethernet2
+    name: Ethernet8
     mtu: 9100
-    speed: 25000
+    speed: 100000
     description: ""
     enabled: false
   - index: 4
-    name: Ethernet3
+    name: Ethernet12
     mtu: 9100
-    speed: 25000
+    speed: 100000
     description: ""
     enabled: false
   - index: 5
-    name: Ethernet4
+    name: Ethernet16
     mtu: 9100
-    speed: 25000
+    speed: 100000
     description: ""
     enabled: false
   - index: 6
-    name: Ethernet5
+    name: Ethernet20
     mtu: 9100
-    speed: 25000
+    speed: 100000
     description: ""
     enabled: false
   - index: 7
-    name: Ethernet6
-    mtu: 9100
-    speed: 25000
-    description: ""
-    enabled: false
-  - index: 8
-    name: Ethernet7
-    mtu: 9100
-    speed: 25000
-    description: ""
-    enabled: false
-  - index: 9
-    name: Ethernet8
-    mtu: 9100
-    speed: 25000
-    description: ""
-    enabled: false
-  - index: 10
-    name: Ethernet9
-    mtu: 9100
-    speed: 25000
-    description: ""
-    enabled: false
-  - index: 11
-    name: Ethernet10
-    mtu: 9100
-    speed: 25000
-    description: ""
-    enabled: false
-  - index: 12
-    name: Ethernet11
-    mtu: 9100
-    speed: 25000
-    description: ""
-    enabled: false
-  - index: 13
-    name: Ethernet12
-    mtu: 9100
-    speed: 25000
-    description: ""
-    enabled: false
-  - index: 14
-    name: Ethernet13
-    mtu: 9100
-    speed: 25000
-    description: ""
-    enabled: false
-  - index: 15
-    name: Ethernet14
-    mtu: 9100
-    speed: 25000
-    description: ""
-    enabled: false
-  - index: 16
-    name: Ethernet15
-    mtu: 9100
-    speed: 25000
-    description: ""
-    enabled: false
-  - index: 17
-    name: Ethernet16
-    mtu: 9100
-    speed: 25000
-    description: ""
-    enabled: false
-  - index: 18
-    name: Ethernet17
-    mtu: 9100
-    speed: 25000
-    description: ""
-    enabled: false
-  - index: 19
-    name: Ethernet18
-    mtu: 9100
-    speed: 25000
-    description: ""
-    enabled: false
-  - index: 20
-    name: Ethernet19
-    mtu: 9100
-    speed: 25000
-    description: ""
-    enabled: false
-  - index: 21
-    name: Ethernet20
-    mtu: 9100
-    speed: 25000
-    description: ""
-    enabled: false
-  - index: 22
-    name: Ethernet21
-    mtu: 9100
-    speed: 25000
-    description: ""
-    enabled: false
-  - index: 23
-    name: Ethernet22
-    mtu: 9100
-    speed: 25000
-    description: ""
-    enabled: false
-  - index: 24
-    name: Ethernet23
-    mtu: 9100
-    speed: 25000
-    description: ""
-    enabled: false
-  - index: 25
     name: Ethernet24
     mtu: 9100
     speed: 100000
     description: ""
     enabled: false
-  - index: 26
+  - index: 8
     name: Ethernet28
     mtu: 9100
     speed: 100000
     description: ""
     enabled: false
-  - index: 27
+  - index: 9
     name: Ethernet32
     mtu: 9100
     speed: 100000
     description: ""
     enabled: false
-  - index: 28
+  - index: 10
     name: Ethernet36
     mtu: 9100
     speed: 100000
     description: ""
     enabled: false
+  - index: 11
+    name: Ethernet40
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 12
+    name: Ethernet44
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 13
+    name: Ethernet48
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 14
+    name: Ethernet52
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 15
+    name: Ethernet56
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 16
+    name: Ethernet60
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 17
+    name: Ethernet64
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 18
+    name: Ethernet68
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 19
+    name: Ethernet72
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 20
+    name: Ethernet76
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 21
+    name: Ethernet80
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 22
+    name: Ethernet84
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 23
+    name: Ethernet88
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 24
+    name: Ethernet92
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 25
+    name: Ethernet96
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 26
+    name: Ethernet100
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 27
+    name: Ethernet104
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 28
+    name: Ethernet108
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
   - index: 29
+    name: Ethernet112
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 30
+    name: Ethernet116
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 31
+    name: Ethernet120
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 32
+    name: Ethernet124
+    mtu: 9100
+    speed: 100000
+    description: ""
+    enabled: false
+  - index: 33
+    name: Ethernet128
+    mtu: 9100
+    speed: 10000
+    description: ""
+    enabled: false
+  - index: 34
+    name: Ethernet129
+    mtu: 9100
+    speed: 10000
+    description: ""
+    enabled: false
+  - index: 35
     name: eth0
     mtu: 1500
     speed: auto
     description: ""
     enabled: true
     mgmt_only: true
-
-ethernets: "{{ dellemc_enterprise_sonic_on_dell_s5224f_ethernets | community.general.lists_mergeby(hardware.ethernet_ports | default([]), 'index', list_merge='append_rp') }}"

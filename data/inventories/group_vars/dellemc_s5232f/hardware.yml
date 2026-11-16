@@ -73,5 +73,17 @@ hardware:
     - index: 28
       type: 100gbase-x-qsfp28
     - index: 29
+      type: 100gbase-x-qsfp28
+    - index: 30
+      type: 100gbase-x-qsfp28
+    - index: 31
+      type: 100gbase-x-qsfp28
+    - index: 32
+      type: 100gbase-x-qsfp28
+    - index: 33
+      type: 10gbase-x-sfpplus
+    - index: 34
+      type: 10gbase-x-sfpplus
+    - index: 35
       type: 1000base-t
   comments: "[Hardware Wiki](https://example.com)"

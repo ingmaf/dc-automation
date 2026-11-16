@@ -1,0 +1,2 @@
+---
+interfaces: "{{ default_ethernets | default([]) | community.general.lists_mergeby(ethernets | default([]), 'name', list_merge='append_rp') }}"
