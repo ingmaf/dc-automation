@@ -61,9 +61,34 @@ all:
         hq1dc1bl1:
         hq1dc1bl2:
 
-    # By vendor
+    fabric:
+      children:
+        spines:
+        leaves:
+        border_leaves:
 
-    dellemc_enterprise_sonic:
+  # By hardware
+
+    dellemc_s5232f:
+      hosts:
+        hq1dc1sp1:
+        hq1dc1sp2:
+
+    dellemc_s5224f:
+      hosts:
+        hq1dc1lf1:
+        hq1dc1lf2:
+        hq1dc1lf3:
+        hq1dc1lf4:
+
+    dellemc_s5212f:
+      hosts:
+        hq1dc1bl1:
+        hq1dc1bl2:
+
+    # By platform
+
+    dellemc_sonic:
       hosts:
         hq1dc1sp1:
         hq1dc1sp2:
@@ -71,5 +96,24 @@ all:
         hq1dc1lf2:
         hq1dc1lf3:
         hq1dc1lf4:
+        hq1dc1bl1:
+        hq1dc1bl2:
+
+  # By platform and hardware
+
+    dellemc_sonic_s5232f:
+      hosts:
+        hq1dc1sp1:
+        hq1dc1sp2:
+
+    dellemc_sonic_s5224f:
+      hosts:
+        hq1dc1lf1:
+        hq1dc1lf2:
+        hq1dc1lf3:
+        hq1dc1lf4:
+
+    dellemc_sonic_s5212f:
+      hosts:
         hq1dc1bl1:
         hq1dc1bl2:
