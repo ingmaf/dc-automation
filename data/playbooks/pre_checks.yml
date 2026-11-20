@@ -1,5 +1,5 @@
 ---
-- name: PLAY 1
+- name: PRINT INVENTORY VARIABLES
   hosts: fabric
   gather_facts: false
 
