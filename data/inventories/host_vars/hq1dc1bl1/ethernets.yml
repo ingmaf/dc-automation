@@ -1,8 +1,8 @@
 ---
 ethernets:
   - name: Ethernet12
-    description: "To spine 1"
+    description: To spine 1
     enabled: true
   - name: Ethernet16
-    description: "To spine 2"
+    description: To spine 2
     enabled: true
