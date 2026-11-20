@@ -1,2 +1,0 @@
----
-default_ethernets: "{{ platform_ethernets | community.general.lists_mergeby(hardware.ethernet_ports | default([]), 'index', list_merge='append_rp') }}"
