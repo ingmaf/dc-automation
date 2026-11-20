@@ -86,7 +86,7 @@ all:
         hq1dc1bl1:
         hq1dc1bl2:
 
-    # By platform
+    # By NOS
 
     dellemc_sonic:
       hosts:
@@ -99,7 +99,7 @@ all:
         hq1dc1bl1:
         hq1dc1bl2:
 
-  # By platform and hardware
+  # By NOS on hardware
 
     dellemc_sonic_s5232f:
       hosts:
