@@ -1,0 +1,16 @@
+---
+nos_defaults:
+  hostname: sonic
+  interface:
+    lag:
+      name_startwith: PortChannel
+      enabled: true
+      description: ""
+    loopback:
+      name_startwith: Loopback
+      enabled: true
+      description: ""
+    svi:
+      name_startwith: Vlan
+      enabled: true
+      description: ""

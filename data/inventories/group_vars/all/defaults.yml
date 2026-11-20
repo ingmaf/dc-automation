@@ -1,0 +1,14 @@
+---
+all_host_defaults:
+  hostname: device
+  interface:
+    lag:
+      type: lag
+    loopback:
+      type: loopback
+    svi:
+      type: svi
+
+defaults:
+  hostname: "{{ nos_defaults.hostname | default(all_host_defaults.hostname) }}"
+  interface: "{{ all_host_defaults.interface | combine(nos_defaults.interface, recursive=True) }}"

@@ -2,15 +2,34 @@
 - name: PLAY 1
   hosts: fabric
   gather_facts: false
+
+  vars:
+    ethernet_types: ['100gbase-x-qsfp28', '25gbase-x-sfp28', '10gbase-x-sfpplus', '1000base-t']
+
   tasks:
-    - name: Task 1
+
+    - name: Summary
       ansible.builtin.debug:
         msg:
           - "{{ hardware.manufacturer }} {{ hardware.model }}"
-          - "{{ interfaces | selectattr('type', 'defined') | selectattr('type', 'equalto', '100gbase-x-qsfp28') | length }} x 100G"
-          - "{{ interfaces | selectattr('type', 'defined') | selectattr('type', 'equalto', '25gbase-x-sfp28') | length }} x 25G"
-          - "{{ interfaces | selectattr('type', 'defined') | selectattr('type', 'equalto', '10gbase-x-sfpplus') | length }} x 10G"
-          - "{{ interfaces | selectattr('type', 'defined') | selectattr('type', 'equalto', '1000base-t') | length }} x 1G"
-          - "{{ interfaces | selectattr('mgmt_only', 'defined') | length }} x Management"
-          - "Enabled interfaces: {{ interfaces | selectattr('enabled', 'equalto', true) | length }}"
-          - "> {{ interfaces | selectattr('enabled', 'equalto', true) | map(attribute='name') }}"
+          - "{{ all_interfaces | selectattr('type', 'equalto', '100gbase-x-qsfp28') | length }} x 100G"
+          - "{{ all_interfaces | selectattr('type', 'equalto', '25gbase-x-sfp28') | length }} x 25G"
+          - "{{ all_interfaces | selectattr('type', 'equalto', '10gbase-x-sfpplus') | length }} x 10G"
+          - "{{ all_interfaces | selectattr('type', 'equalto', '1000base-t') | length }} x 1G"
+          - "Enabled interfaces: {{ all_interfaces | selectattr('enabled') | map(attribute='name') }}"
+
+    - name: Management interfaces
+      ansible.builtin.debug:
+        msg: "{{ mgmt_interfaces }}"
+
+    - name: Enabled ethernet interfaces
+      ansible.builtin.debug:
+        msg: "{{ interfaces | selectattr('enabled') | selectattr('type', 'in', ethernet_types) }}"
+
+    - name: Enabled loopback interfaces
+      ansible.builtin.debug:
+        msg: "{{ interfaces | selectattr('enabled') | selectattr('type', 'equalto', 'loopback') }}"
+
+    - name: Enabled LAG interfaces
+      ansible.builtin.debug:
+        msg: "{{ interfaces | selectattr('enabled') | selectattr('type', 'equalto', 'lag') }}"

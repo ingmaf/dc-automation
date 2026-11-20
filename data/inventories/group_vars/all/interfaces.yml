@@ -1,0 +1,46 @@
+---
+
+# Physical interfaces
+
+ethernet_default_settings: "{{
+  platform_ethernets | default([]) |
+  community.general.lists_mergeby(hardware.ethernet_ports | default([]), 'index', list_merge='append_rp')
+  }}"
+
+normalized_ethernets: "{{
+  ethernet_default_settings |
+  community.general.lists_mergeby(ethernets, 'name', list_merge='append_rp')
+  }}"
+
+# Logical interfaces
+
+normalized_loopbacks: "{{
+  [defaults.interface.loopback] | product(loopbacks | default([])) |
+  map('combine')
+  }}"
+
+normalized_lags: "{{
+  [defaults.interface.lag] | product(lags | default([])) |
+  map('combine')
+  }}"
+
+normalized_svis: "{{
+  [defaults.interface.svi] | product(svis | default([])) |
+  map('combine')
+  }}"
+
+# All interfaces
+
+interfaces: "{{
+  normalized_ethernets | rejectattr('mgmt_only', 'defined') +
+  normalized_svis | rejectattr('mgmt_only', 'defined') +
+  normalized_loopbacks +
+  normalized_lags
+  }}"
+
+mgmt_interfaces: "{{
+  normalized_ethernets | selectattr('mgmt_only', 'defined') +
+  normalized_svis | rejectattr('mgmt_only', 'defined')
+  }}"
+
+all_interfaces: "{{ interfaces + mgmt_interfaces }}"
