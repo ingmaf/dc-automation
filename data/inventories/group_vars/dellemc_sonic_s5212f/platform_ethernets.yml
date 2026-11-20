@@ -94,6 +94,6 @@ platform_ethernets:
     name: eth0
     mtu: 1500
     speed: auto
-    description: ""
+    description: "Management0"
     enabled: true
     mgmt_only: true
