@@ -42,7 +42,7 @@ all:
 
   children:
 
-  # By role
+    # By role
 
     spines:
       hosts:
@@ -67,7 +67,7 @@ all:
         leaves:
         border_leaves:
 
-  # By hardware
+    # By hardware
 
     dellemc_s5232f:
       hosts:
@@ -99,7 +99,7 @@ all:
         hq1dc1bl1:
         hq1dc1bl2:
 
-  # By NOS on hardware
+    # By NOS on hardware
 
     dellemc_sonic_s5232f:
       hosts:
