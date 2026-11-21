@@ -5,14 +5,14 @@ nos_defaults:
   password: ""
   logical_interface:
     lag:
-      name_startwith: Port-Channel
+      name_regex: '^Port-Channel[1-9][0-9]*$'
       enabled: true
       description: ""
     loopback:
-      name_startwith: Loopback
+      name_regex: '^Loopback[0-9]*$'
       enabled: true
       description: ""
     svi:
-      name_startwith: Vlan
+      name_regex: '^Vlan[1-9][0-9]*$'
       enabled: true
       description: ""
