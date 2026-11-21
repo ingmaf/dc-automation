@@ -1,0 +1,17 @@
+---
+lags:
+  - name: PortChannel256
+    description: MCLAG peer-link
+    mode: tagged-all
+  - name: PortChannel1
+    description: MCLAG for server 1 in rack 2
+    is_mclag: true
+    mode: tagged
+    tagged_vlans:
+      vlan_ids: [100, 200, 300]
+  - name: PortChannel2
+    description: MCLAG for server 2 in rack 2
+    is_mclag: true
+    mode: tagged
+    tagged_vlans:
+      vlan_ids: [400, 500, 600]
