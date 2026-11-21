@@ -1,6 +1,8 @@
 ---
 nos_defaults:
   hostname: sonic
+  username: admin
+  password: YourPaSsWoRd
   interface:
     lag:
       name_startwith: PortChannel
