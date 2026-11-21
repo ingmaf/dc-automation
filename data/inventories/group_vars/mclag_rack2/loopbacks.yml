@@ -1,0 +1,6 @@
+---
+loopbacks:
+  - name: Loopback0
+    description: Router ID
+  - name: Loopback1
+    description: Logical VTEP
