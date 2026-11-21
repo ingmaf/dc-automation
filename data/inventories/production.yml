@@ -20,7 +20,7 @@ all:
 
   children:
 
-  # By role
+    # By role
 
     spines:
       hosts:
@@ -49,7 +49,7 @@ all:
         border_leaves:
         leaves:
 
-  # By hardware
+    # By hardware
 
     dellemc_s5232f:
       hosts:
@@ -95,7 +95,7 @@ all:
         hq1dc1lf7:
         hq1dc1lf8:
 
-  # By NOS on hardware
+    # By NOS on hardware
 
     dellemc_sonic_s5232f:
       hosts:
@@ -120,3 +120,30 @@ all:
         hq1dc1lf6:
         hq1dc1lf7:
         hq1dc1lf8:
+
+    # By MCLAG domains
+
+    mclag_rack1:
+      hosts:
+        hq1dc1lf1:
+        hq1dc1lf2:
+
+    mclag_rack2:
+      hosts:
+        hq1dc1lf3:
+        hq1dc1lf4:
+
+    mclag_rack3:
+      hosts:
+        hq1dc1lf5:
+        hq1dc1lf6:
+
+    mclag_rack4:
+      hosts:
+        hq1dc1lf7:
+        hq1dc1lf8:
+
+    mclag_rack32:
+      hosts:
+        hq1dc1bl1:
+        hq1dc1bl2:
