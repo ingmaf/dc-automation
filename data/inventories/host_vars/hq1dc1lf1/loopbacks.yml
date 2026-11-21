@@ -1,4 +1,0 @@
----
-loopbacks:
-  - name: Loopback0
-    description: Router ID
