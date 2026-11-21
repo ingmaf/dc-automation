@@ -9,7 +9,7 @@ ethernet_default_settings: "{{
 
 normalized_ethernets: "{{
   ethernet_default_settings |
-  community.general.lists_mergeby(ethernets, 'name', list_merge='append_rp')
+  community.general.lists_mergeby(ethernets | default([]), 'name', list_merge='append_rp')
   }}"
 
 # Logical interfaces
