@@ -3,6 +3,9 @@ nos_defaults:
   hostname: localhost
   username: admin
   password: ""
+  physical_interface:
+    ethernet:
+      name_regex: '^Ethernet[1-9][0-9]*(/[1-9][0-9]*)?$'
   logical_interface:
     lag:
       name_regex: '^Port-Channel[1-9][0-9]*$'

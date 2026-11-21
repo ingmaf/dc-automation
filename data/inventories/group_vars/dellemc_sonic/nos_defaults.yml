@@ -3,6 +3,9 @@ nos_defaults:
   hostname: sonic
   username: admin
   password: YourPaSsWoRd
+  physical_interface:
+    ethernet:
+      name_regex: '^Ethernet[0-9][0-9]*$'
   logical_interface:
     lag:
       name_regex: '^PortChannel[1-9][0-9]*$'

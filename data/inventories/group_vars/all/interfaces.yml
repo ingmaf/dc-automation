@@ -7,9 +7,14 @@ ethernet_default_settings: "{{
   community.general.lists_mergeby(hardware.ethernet_ports | default([]), 'index', list_merge='append_rp')
   }}"
 
-normalized_ethernets: "{{
+pre_normalized_ethernets: "{{
   ethernet_default_settings |
   community.general.lists_mergeby(ethernets | default([]), 'name', list_merge='append_rp')
+  }}"
+
+normalized_ethernets: "{{
+  [defaults.physical_interface.ethernet] | product(pre_normalized_ethernets | default([])) |
+  map('combine')
   }}"
 
 # Logical interfaces

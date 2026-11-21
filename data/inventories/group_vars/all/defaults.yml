@@ -17,4 +17,5 @@ all_host_defaults:
 defaults:
   hostname: "{{ nos_defaults.hostname | default(all_host_defaults.hostname) }}"
   ethernet_types: "{{ all_host_defaults.ethernet_types }}"
+  physical_interface: "{{ nos_defaults.physical_interface }}"
   logical_interface: "{{ all_host_defaults.logical_interface | combine(nos_defaults.logical_interface, recursive=True) }}"
