@@ -3,7 +3,7 @@ nos_defaults:
   hostname: sonic
   username: admin
   password: YourPaSsWoRd
-  interface:
+  logical_interface:
     lag:
       name_startwith: PortChannel
       enabled: true

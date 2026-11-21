@@ -15,17 +15,17 @@ normalized_ethernets: "{{
 # Logical interfaces
 
 normalized_loopbacks: "{{
-  [defaults.interface.loopback] | product(loopbacks | default([])) |
+  [defaults.logical_interface.loopback] | product(loopbacks | default([])) |
   map('combine')
   }}"
 
 normalized_lags: "{{
-  [defaults.interface.lag] | product(lags | default([])) |
+  [defaults.logical_interface.lag] | product(lags | default([])) |
   map('combine')
   }}"
 
 normalized_svis: "{{
-  [defaults.interface.svi] | product(svis | default([])) |
+  [defaults.logical_interface.svi] | product(svis | default([])) |
   map('combine')
   }}"
 
