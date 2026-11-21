@@ -1,0 +1,58 @@
+---
+ethernets:
+  - name: Ethernet1
+    enabled: false
+  - name: Ethernet2
+    enabled: false
+  - name: Ethernet3
+    enabled: false
+  - name: Ethernet4
+    enabled: false
+  - name: Ethernet5
+    enabled: false
+  - name: Ethernet6
+    enabled: false
+  - name: Ethernet7
+    enabled: false
+  - name: Ethernet8
+    enabled: false
+  - name: Ethernet9
+    enabled: false
+  - name: Ethernet10
+    enabled: false
+  - name: Ethernet11
+    enabled: false
+  - name: Ethernet12
+    enabled: false
+  - name: Ethernet13
+    enabled: false
+  - name: Ethernet14
+    enabled: false
+  - name: Ethernet15
+    enabled: false
+  - name: Ethernet16
+    enabled: false
+  - name: Ethernet17
+    enabled: false
+  - name: Ethernet18
+    enabled: false
+  - name: Ethernet19
+    enabled: false
+  - name: Ethernet20
+    enabled: false
+  - name: Ethernet21
+    enabled: false
+  - name: Ethernet22
+    enabled: false
+  - name: Ethernet23
+    enabled: false
+  - name: Ethernet24
+    enabled: false
+  - name: Ethernet25/1
+    description: "To spine 1"
+  - name: Ethernet26/1
+    description: "To spine 2"
+  - name: Ethernet27/1
+    enabled: false
+  - name: Ethernet28/1
+    enabled: false
