@@ -1,0 +1,71 @@
+---
+hardware:
+  model: DCS-7050SX3-24
+  manufacturer: Arista Networks
+  description: Arista DCS-7050SX3-24YC4C-S-F switch
+  rack_units: 1
+  airflow: front-to-rear
+  full_depth: true
+  power_ports:
+    - index: 1
+    - index: 2
+  ethernet_ports:
+    - index: 1
+      type: 25gbase-x-sfp28
+    - index: 2
+      type: 25gbase-x-sfp28
+    - index: 3
+      type: 25gbase-x-sfp28
+    - index: 4
+      type: 25gbase-x-sfp28
+    - index: 5
+      type: 25gbase-x-sfp28
+    - index: 6
+      type: 25gbase-x-sfp28
+    - index: 7
+      type: 25gbase-x-sfp28
+    - index: 8
+      type: 25gbase-x-sfp28
+    - index: 9
+      type: 25gbase-x-sfp28
+    - index: 10
+      type: 25gbase-x-sfp28
+    - index: 11
+      type: 25gbase-x-sfp28
+    - index: 12
+      type: 25gbase-x-sfp28
+    - index: 13
+      type: 25gbase-x-sfp28
+    - index: 14
+      type: 25gbase-x-sfp28
+    - index: 15
+      type: 25gbase-x-sfp28
+    - index: 16
+      type: 25gbase-x-sfp28
+    - index: 17
+      type: 25gbase-x-sfp28
+    - index: 18
+      type: 25gbase-x-sfp28
+    - index: 19
+      type: 25gbase-x-sfp28
+    - index: 20
+      type: 25gbase-x-sfp28
+    - index: 21
+      type: 25gbase-x-sfp28
+    - index: 22
+      type: 25gbase-x-sfp28
+    - index: 23
+      type: 25gbase-x-sfp28
+    - index: 24
+      type: 25gbase-x-sfp28
+    - index: 25
+      type: 100gbase-x-qsfp28
+    - index: 26
+      type: 100gbase-x-qsfp28
+    - index: 27
+      type: 100gbase-x-qsfp28
+    - index: 28
+      type: 100gbase-x-qsfp28
+    - index: 29
+      type: 1000base-t
+  comments: "[Hardware Wiki](https://example.com)"

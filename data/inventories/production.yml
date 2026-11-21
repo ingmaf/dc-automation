@@ -68,7 +68,7 @@ all:
         hq1dc1bl1:
         hq1dc1bl2:
 
-    arista_7050sx3_24:
+    arista_dcs7050sx3_24:
       hosts:
         hq1dc1lf5:
         hq1dc1lf6:
@@ -114,7 +114,7 @@ all:
         hq1dc1bl1:
         hq1dc1bl2:
 
-    arista_eos_7050sx3_24:
+    arista_eos_dcs7050sx3_24:
       hosts:
         hq1dc1lf5:
         hq1dc1lf6:
