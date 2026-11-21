@@ -8,7 +8,9 @@ hardware:
   full_depth: true
   power_ports:
     - index: 1
+      connector: iec-60320-c14
     - index: 2
+      connector: iec-60320-c14
   ethernet_ports:
     - index: 1
       type: 25gbase-x-sfp28
