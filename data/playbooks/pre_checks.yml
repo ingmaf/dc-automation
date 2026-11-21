@@ -17,19 +17,29 @@
           - "{{ all_interfaces | selectattr('type', 'equalto', '10gbase-x-sfpplus') | length }} x 10G"
           - "{{ all_interfaces | selectattr('type', 'equalto', '1000base-t') | length }} x 1G"
           - "Enabled interfaces: {{ all_interfaces | selectattr('enabled') | map(attribute='name') }}"
+      tags: summary
 
     - name: Management interfaces
       ansible.builtin.debug:
         msg: "{{ mgmt_interfaces }}"
+      tags: mgmt
 
     - name: Enabled ethernet interfaces
       ansible.builtin.debug:
         msg: "{{ interfaces | selectattr('enabled') | selectattr('type', 'in', ethernet_types) }}"
+      tags: ethernets
 
     - name: Enabled loopback interfaces
       ansible.builtin.debug:
         msg: "{{ interfaces | selectattr('enabled') | selectattr('type', 'equalto', 'loopback') }}"
+      tags: loopbacks
 
     - name: Enabled LAG interfaces
       ansible.builtin.debug:
         msg: "{{ interfaces | selectattr('enabled') | selectattr('type', 'equalto', 'lag') }}"
+      tags: lags
+
+    - name: Enabled VLAN interfaces
+      ansible.builtin.debug:
+        msg: "{{ interfaces | selectattr('enabled') | selectattr('type', 'equalto', 'svi') }}"
+      tags: svis
