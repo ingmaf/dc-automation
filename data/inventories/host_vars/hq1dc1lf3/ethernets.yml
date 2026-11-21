@@ -1,8 +1,14 @@
 ---
 ethernets:
   - name: Ethernet24
-    description: "To spine 1"
+    description: To spine 1
     enabled: true
   - name: Ethernet28
-    description: "To spine 2"
+    description: To spine 2
+    enabled: true
+  - name: Ethernet32
+    description: To leaf 4
+    enabled: true
+  - name: Ethernet36
+    description: To leaf 4
     enabled: true

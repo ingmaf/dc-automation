@@ -49,10 +49,10 @@ ethernets:
   - name: Ethernet24
     enabled: false
   - name: Ethernet25/1
-    description: "To spine 1"
+    description: To spine 1
   - name: Ethernet26/1
-    description: "To spine 2"
+    description: To spine 2
   - name: Ethernet27/1
-    enabled: false
+    description: To leaf 5
   - name: Ethernet28/1
-    enabled: false
+    description: To leaf 5

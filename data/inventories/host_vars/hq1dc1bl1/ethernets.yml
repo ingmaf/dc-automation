@@ -6,3 +6,9 @@ ethernets:
   - name: Ethernet16
     description: To spine 2
     enabled: true
+  - name: Ethernet20
+    description: To border leaf 2
+    enabled: true
+  - name: Ethernet24
+    description: To border leaf 2
+    enabled: true
