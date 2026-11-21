@@ -1,0 +1,177 @@
+---
+platform_ethernets:
+  - index: 1
+    name: Ethernet1
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 2
+    name: Ethernet2
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 3
+    name: Ethernet3
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 4
+    name: Ethernet4
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 5
+    name: Ethernet5
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 6
+    name: Ethernet6
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 7
+    name: Ethernet7
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 8
+    name: Ethernet8
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 9
+    name: Ethernet9
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 10
+    name: Ethernet10
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 11
+    name: Ethernet11
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 12
+    name: Ethernet12
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 13
+    name: Ethernet13
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 14
+    name: Ethernet14
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 15
+    name: Ethernet15
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 16
+    name: Ethernet16
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 17
+    name: Ethernet17
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 18
+    name: Ethernet18
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 19
+    name: Ethernet19
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 20
+    name: Ethernet20
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 21
+    name: Ethernet21
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 22
+    name: Ethernet22
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 23
+    name: Ethernet23
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 24
+    name: Ethernet24
+    mtu: 9236
+    speed: 25000
+    description: ""
+    enabled: true
+  - index: 25
+    name: Ethernet25/1
+    mtu: 9236
+    speed: 100000
+    description: ""
+    enabled: true
+  - index: 26
+    name: Ethernet26/1
+    mtu: 9236
+    speed: 100000
+    description: ""
+    enabled: true
+  - index: 27
+    name: Ethernet27/1
+    mtu: 9236
+    speed: 100000
+    description: ""
+    enabled: true
+  - index: 28
+    name: Ethernet28/1
+    mtu: 9236
+    speed: 100000
+    description: ""
+    enabled: true
+  - index: 29
+    name: eth0
+    mtu: 1500
+    speed: auto
+    description: "Management1"
+    enabled: true
+    mgmt_only: true
