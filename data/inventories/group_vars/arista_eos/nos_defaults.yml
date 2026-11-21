@@ -1,0 +1,18 @@
+---
+nos_defaults:
+  hostname: localhost
+  username: admin
+  password: ""
+  interface:
+    lag:
+      name_startwith: Port-Channel
+      enabled: true
+      description: ""
+    loopback:
+      name_startwith: Loopback
+      enabled: true
+      description: ""
+    svi:
+      name_startwith: Vlan
+      enabled: true
+      description: ""
