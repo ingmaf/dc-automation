@@ -5,14 +5,16 @@ all:
   # Hosts
 
   hosts:
+    hq1dc1sp1:
+    hq1dc1sp2:
+    hq1dc1bl1:
+    hq1dc1bl2:
     hq1dc1lf1:
     hq1dc1lf2:
     hq1dc1lf3:
     hq1dc1lf4:
-    hq1dc1bl1:
-    hq1dc1bl2:
-    hq1dc1sp1:
-    hq1dc1sp2:
+    hq1dc1lf5:
+    hq1dc1lf6:
 
   # Groups
 
@@ -25,23 +27,27 @@ all:
         hq1dc1sp1:
         hq1dc1sp2:
 
+    border_leaves:
+      hosts:
+        hq1dc1bl1:
+        hq1dc1bl2:
+
     leaves:
       hosts:
         hq1dc1lf1:
         hq1dc1lf2:
         hq1dc1lf3:
         hq1dc1lf4:
-
-    border_leaves:
-      hosts:
-        hq1dc1bl1:
-        hq1dc1bl2:
+        hq1dc1lf5:
+        hq1dc1lf6:
+        hq1dc1lf7:
+        hq1dc1lf8:
 
     fabric:
       children:
         spines:
-        leaves:
         border_leaves:
+        leaves:
 
   # By hardware
 
@@ -62,6 +68,13 @@ all:
         hq1dc1bl1:
         hq1dc1bl2:
 
+    arista_7050sx3_24:
+      hosts:
+        hq1dc1lf5:
+        hq1dc1lf6:
+        hq1dc1lf7:
+        hq1dc1lf8:
+
     # By NOS
 
     dellemc_sonic:
@@ -74,6 +87,13 @@ all:
         hq1dc1lf4:
         hq1dc1bl1:
         hq1dc1bl2:
+
+    arista_eos:
+      hosts:
+        hq1dc1lf5:
+        hq1dc1lf6:
+        hq1dc1lf7:
+        hq1dc1lf8:
 
   # By NOS on hardware
 
@@ -93,3 +113,10 @@ all:
       hosts:
         hq1dc1bl1:
         hq1dc1bl2:
+
+    arista_eos_7050sx3_24:
+      hosts:
+        hq1dc1lf5:
+        hq1dc1lf6:
+        hq1dc1lf7:
+        hq1dc1lf8:
