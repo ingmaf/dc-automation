@@ -1,5 +1,15 @@
 ---
 ethernets:
+  - name: Ethernet0
+    description: Orphan port 1
+    mode: access
+    untagged_vlan:
+      vlan_id: 100
+  - name: Ethernet1
+    description: Orphan port 2
+    mode: access
+    untagged_vlan:
+      vlan_id: 400
   - name: Ethernet12
     description: To spine 1
     enabled: true
