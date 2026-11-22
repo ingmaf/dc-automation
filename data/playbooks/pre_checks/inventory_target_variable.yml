@@ -1,0 +1,16 @@
+---
+- name: PRINT TARGET VARIABLE
+  hosts: fabric
+  gather_facts: false
+  tasks:
+
+    - name: Print target variable passed with extra-vars
+      when: target is defined
+      tags: always
+      block:
+        - name: Query vars for target variable
+          ansible.builtin.set_fact:
+            tmp_var: "{{ vars | community.general.json_query(target) }}"
+        - name: Print target variable
+          ansible.builtin.debug:
+            msg: "{{ tmp_var }}"

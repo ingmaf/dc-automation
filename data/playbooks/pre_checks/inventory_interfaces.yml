@@ -1,19 +1,6 @@
 ---
-- name: PRINT TARGET VARIABLE
-  hosts: fabric
-  gather_facts: false
-  tasks:
-
-    - name: Print target variable passed with extra-vars
-      when: target is defined
-      tags: always
-      block:
-        - name: Query vars for target variable
-          ansible.builtin.set_fact:
-            tmp_var: "{{ vars | community.general.json_query(target) }}"
-        - name: Print target variable
-          ansible.builtin.debug:
-            msg: "{{ tmp_var }}"
+- name: IMPORT PLAYBOOK
+  ansible.builtin.import_playbook: inventory_target_variable.yml
 
 - name: PRINT INTERFACES
   hosts: fabric
@@ -59,17 +46,29 @@
 - name: CHECK INTERFACES
   hosts: fabric
   gather_facts: false
+  tags: checks
   tasks:
 
-    - name: Check interface names
+    - name: Detect wrong interface names
       ansible.builtin.assert:
         that: item.name | regex_search(item.name_regex)
         quiet: true
         fail_msg: "Name {{ item.name }} does not match {{ item.name_regex }}"
-      # loop: "{{ interfaces | selectattr('type', 'in', logical_interface_types) }}"
       loop: "{{ interfaces }}"
       loop_control:
         label: "{{ item.name }}"
-      # vars:
-      #   logical_interface_types: "{{ defaults.logical_interface.values() | map(attribute='type') }}"
-      tags: checks
+
+    - name: Detect duplicated interface names
+      ansible.builtin.assert:
+        that: unique_names_count == names_count
+        quiet: true
+        fail_msg: "Duplicate found in {{ item }}"
+      vars:
+        unique_names_count: "{{ vars[item] | map(attribute='name') | unique | length }}"
+        names_count: "{{ vars[item] | map(attribute='name') | length }}"
+      when: vars[item] is defined
+      loop:
+        - ethernets
+        - loopbacks
+        - lags
+        - svis
