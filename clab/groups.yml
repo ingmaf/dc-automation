@@ -1,0 +1,16 @@
+---
+dellemc_sonic_s5232f:
+  kind: dell_sonic
+  image: vrnetlab/dell_sonic:4.5.3
+dellemc_sonic_s5224f:
+  kind: dell_sonic
+  image: vrnetlab/dell_sonic:4.5.3
+dellemc_sonic_s5212f:
+  kind: dell_sonic
+  image: vrnetlab/dell_sonic:4.5.3
+arista_eos_dcs7050sx3_24:
+  kind: arista_ceos
+  image: ceos:4.36.3.2M
+linux_server:
+  kind: linux
+  image: debian:12.7

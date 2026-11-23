@@ -1,0 +1,49 @@
+---
+hq1dc1sp1:
+  group: dellemc_sonic_s5232f
+hq1dc1sp2:
+  group: dellemc_sonic_s5232f
+hq1dc1lf1:
+  group: dellemc_sonic_s5224f
+hq1dc1lf2:
+  group: dellemc_sonic_s5224f
+hq1dc1lf3:
+  group: dellemc_sonic_s5224f
+hq1dc1lf4:
+  group: dellemc_sonic_s5224f
+hq1dc1lf5:
+  group: arista_eos_dcs7050sx3_24
+hq1dc1lf6:
+  group: arista_eos_dcs7050sx3_24
+hq1dc1lf7:
+  group: arista_eos_dcs7050sx3_24
+hq1dc1lf8:
+  group: arista_eos_dcs7050sx3_24
+hq1dc1bl1:
+  group: dellemc_sonic_s5212f
+hq1dc1bl2:
+  group: dellemc_sonic_s5212f
+server1:
+  group: linux_server
+server2:
+  group: linux_server
+server3:
+  group: linux_server
+server4:
+  group: linux_server
+server5:
+  group: linux_server
+server6:
+  group: linux_server
+server7:
+  group: linux_server
+server8:
+  group: linux_server
+server12:
+  group: linux_server
+server34:
+  group: linux_server
+server56:
+  group: linux_server
+server78:
+  group: linux_server
