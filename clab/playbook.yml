@@ -1,0 +1,81 @@
+---
+- name: DISABLE ZTP IN DELL SONIC SWITCHES
+  hosts: dell_sonic
+  gather_facts: false
+  become: true
+  vars:
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+  tasks:
+    - name: Wait until switch is online
+      ansible.builtin.wait_for_connection:
+        delay: 10
+        timeout: 300
+        sleep: 10
+    - name: Execute command to disable ZTP
+      ansible.builtin.command: ztp disable -y
+      register: output
+      changed_when: output.rc != 0
+
+- name: SET HKSKU FOR DELL S5232F-ON SWITCHES
+  hosts: dellemc_sonic_s5232f
+  gather_facts: false
+  become: true
+  vars:
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+  tasks:
+    - name: Execute command to set HWSKU
+      ansible.builtin.command: config-hwsku set DellEMC-S5232f-C32 -y
+      register: output
+      changed_when: output.rc != 0
+      ignore_errors: true
+
+- name: SET HKSKU FOR DELL S5224F-ON SWITCHES
+  hosts: dellemc_sonic_s5224f
+  gather_facts: false
+  become: true
+  vars:
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+  tasks:
+    - name: Execute command to set HWSKU
+      ansible.builtin.command: config-hwsku set DellEMC-S5224f-P-25G -y
+      register: output
+      changed_when: output.rc != 0
+      ignore_errors: true
+
+- name: SET HKSKU FOR DELL S5212F-ON SWITCHES
+  hosts: dellemc_sonic_s5212f
+  gather_facts: false
+  become: true
+  vars:
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+  tasks:
+    - name: Execute command to set HWSKU
+      ansible.builtin.command: config-hwsku set DellEMC-S5212f-P-25G -y
+      register: output
+      changed_when: output.rc != 0
+      ignore_errors: true
+
+- name: CHECK HKSKU IN DELL SWITCHES
+  hosts: dell_sonic
+  gather_facts: false
+  become: true
+  vars:
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+  tasks:
+    - name: Wait until switch reboots
+      ansible.builtin.wait_for_connection:
+        delay: 10
+        timeout: 300
+        sleep: 10
+    - name: Get HWSKU from running-config
+      ansible.builtin.command: sonic-db-cli CONFIG_DB HGET "DEVICE_METADATA|localhost" "hwsku"
+      register: output
+      changed_when: output.rc != 0
+    - name: Assert HWSKU matches switch model
+      ansible.builtin.assert:
+        that: "model_group in group_names"
+        quiet: true
+        fail_msg: "Device is not member of {{ model_group }}"
+      vars:
+        model: "{{ output.stdout | regex_search('DellEMC-([0-9a-zA-Z]+)-', '\\1') | first | lower }}"
+        model_group: "{{ 'dellemc_sonic_' + model }}"
