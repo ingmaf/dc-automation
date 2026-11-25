@@ -1,0 +1,71 @@
+---
+- name: LOAD STARTUP CONFIG IN DELL SONIC SWITCHES
+  hosts: dell_sonic
+  vars:
+    webserver_url: "http://10.0.2.109:8080/startup_configs"
+    cleanup_tempfiles: true
+  tasks:
+    - name: Create temp folder, download startup-config file, copy file to switch, delete temp folder
+      notify:
+        - Load config_db.json into running-config
+        - Save running-config to startup-config
+      block:
+        - name: Create a temporary folder in the controller
+          delegate_to: localhost
+          ansible.builtin.tempfile:
+            state: directory
+            prefix: ansible_
+          register: tempdir
+        - name: Download config_db.json to the temporary folder
+          delegate_to: localhost
+          ansible.builtin.get_url:
+            url: "{{ webserver_url }}/{{ inventory_hostname }}/config_db.json"
+            dest: "{{ tempdir.path }}/config_db.json"
+            mode: "0600"
+          when: tempdir is not skipped
+        - name: Copy config_db.json from controller to switch
+          become: true
+          ansible.builtin.copy:
+            src: "{{ tempdir.path }}/config_db.json"
+            dest: "/etc/sonic/config_db.json"
+            mode: "0600"
+            backup: true
+          when: tempdir is not skipped
+      rescue:
+        - name: WARNING! There was an error but rescue was executed
+          ansible.builtin.debug:
+            msg: "Check previous task output for details"
+        - name: Save variable to indicate handlers about the error
+          ansible.builtin.set_fact:
+            rescue_executed: true
+      always:
+        - name: Show temporary folder path if not cleaning it up
+          delegate_to: localhost
+          ansible.builtin.debug:
+            msg: "Temp file -> {{ tempdir.path }}"
+          when:
+            - tempdir is not skipped
+            - tempdir.path is defined
+            - not cleanup_tempfiles
+        - name: Cleanup temporary folder
+          delegate_to: localhost
+          ansible.builtin.file:
+            path: "{{ tempdir.path }}"
+            state: absent
+          when:
+            - tempdir is not skipped
+            - tempdir.path is defined
+            - cleanup_tempfiles
+  handlers:
+    - name: Load config_db.json into running-config
+      become: true
+      ansible.builtin.command: config reload -y
+      when: not (rescue_executed | default(false))
+      register: output
+      changed_when: output.rc != 0
+    - name: Save running-config to startup-config
+      become: true
+      ansible.builtin.command: config save -y
+      when: not (rescue_executed | default(false))
+      register: output
+      changed_when: output.rc != 0
