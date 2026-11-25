@@ -1,7 +1,6 @@
 ---
 - name: DISABLE ZTP IN DELL SONIC SWITCHES
   hosts: dell_sonic
-  become: true
   tasks:
     - name: Wait until switch is online
       ansible.builtin.wait_for_connection:
@@ -9,15 +8,16 @@
         timeout: 300
         sleep: 10
     - name: Execute command to disable ZTP
+      become: true
       ansible.builtin.command: ztp disable -y
       register: output
       changed_when: output.rc != 0
 
 - name: SET HKSKU FOR DELL S5232F-ON SWITCHES
   hosts: dellemc_sonic_s5232f
-  become: true
   tasks:
     - name: Execute command to set HWSKU
+      become: true
       ansible.builtin.command: config-hwsku set DellEMC-S5232f-C32 -y
       register: output
       changed_when: output.rc != 0
@@ -25,9 +25,9 @@
 
 - name: SET HKSKU FOR DELL S5224F-ON SWITCHES
   hosts: dellemc_sonic_s5224f
-  become: true
   tasks:
     - name: Execute command to set HWSKU
+      become: true
       ansible.builtin.command: config-hwsku set DellEMC-S5224f-P-25G -y
       register: output
       changed_when: output.rc != 0
@@ -35,9 +35,9 @@
 
 - name: SET HKSKU FOR DELL S5212F-ON SWITCHES
   hosts: dellemc_sonic_s5212f
-  become: true
   tasks:
     - name: Execute command to set HWSKU
+      become: true
       ansible.builtin.command: config-hwsku set DellEMC-S5212f-P-25G -y
       register: output
       changed_when: output.rc != 0
@@ -45,7 +45,6 @@
 
 - name: CHECK HKSKU IN DELL SONIC SWITCHES
   hosts: dell_sonic
-  become: true
   tasks:
     - name: Wait until switch reboots
       ansible.builtin.wait_for_connection:
@@ -53,6 +52,7 @@
         timeout: 300
         sleep: 10
     - name: Get HWSKU from running-config
+      become: true
       ansible.builtin.command: sonic-db-cli CONFIG_DB HGET "DEVICE_METADATA|localhost" "hwsku"
       register: output
       changed_when: output.rc != 0
@@ -65,29 +65,3 @@
       vars:
         model: "{{ output.stdout | regex_search('DellEMC-([0-9a-zA-Z]+)-', '\\1') | first | lower }}"
         model_group: "{{ 'dellemc_sonic_' + model }}"
-
-- name: LOAD STARTUP CONFIG IN DELL SONIC SWITCHES
-  hosts: dell_sonic
-  become: true
-  tasks:
-    - name: Copy config_db.json to switch
-      ansible.builtin.copy:
-        src: "{{ config_db }}"
-        dest: "/etc/sonic/config_db.json"
-        mode: "0600"
-        backup: true
-      when: config_db is file
-      vars:
-        config_db: "startup_configs/v4-5-3/{{ inventory_hostname }}/config_db.json"
-      notify:
-        - Load config_db.json into running-config
-        - Save running-config to startup-config
-  handlers:
-    - name: Load config_db.json into running-config
-      ansible.builtin.command: config reload -y
-      register: output
-      changed_when: output.rc != 0
-    - name: Save running-config to startup-config
-      ansible.builtin.command: config save -y
-      register: output
-      changed_when: output.rc != 0
