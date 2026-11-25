@@ -72,10 +72,17 @@
   tasks:
     - name: Copy config_db.json to switch
       ansible.builtin.copy:
-        src: "startup_configs/{{ inventory_hostname }}/config_db.json"
+        src: "{{ config_db }}"
         dest: "/etc/sonic/config_db.json"
         mode: "0600"
         backup: true
+      when: config_db is file
+      vars:
+        config_db: "startup_configs/v4-5-3/{{ inventory_hostname }}/config_db.json"
+      notify:
+        - Load config_db.json into running-config
+        - Save running-config to startup-config
+  handlers:
     - name: Load config_db.json into running-config
       ansible.builtin.command: config reload -y
       register: output
