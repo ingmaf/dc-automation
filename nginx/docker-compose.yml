@@ -1,5 +1,5 @@
 services:
-  fileserver:
+  webserver:
     image: nginx:alpine
     ports:
       - "8080:80"
@@ -7,4 +7,3 @@ services:
       - ./startup_configs:/usr/share/nginx/html:ro
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
     restart: unless-stopped
-
