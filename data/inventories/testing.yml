@@ -87,20 +87,20 @@ all:
       ansible_port: 2248
     server12:
       ansible_host: clab-server
-      ansible_httpapi_port: 44351
-      ansible_port: 2251
+      ansible_httpapi_port: 44361
+      ansible_port: 2261
     server34:
       ansible_host: clab-server
-      ansible_httpapi_port: 44352
-      ansible_port: 2252
+      ansible_httpapi_port: 44362
+      ansible_port: 2262
     server56:
       ansible_host: clab-server
-      ansible_httpapi_port: 44353
-      ansible_port: 2253
+      ansible_httpapi_port: 44363
+      ansible_port: 2263
     server78:
       ansible_host: clab-server
-      ansible_httpapi_port: 44354
-      ansible_port: 2254
+      ansible_httpapi_port: 44364
+      ansible_port: 2264
 
   # Groups
 
