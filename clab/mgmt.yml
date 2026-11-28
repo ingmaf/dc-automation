@@ -1,3 +1,4 @@
 ---
+name: hq1dc1
 ipv4-subnet: 10.255.1.0/24
 ipv4-gw: 10.255.1.254

@@ -74,7 +74,6 @@ def main():
     """TBC"""
 
     clab = {
-        'name': "dc",
         'prefix': ""
     }
     mgmt = get_section('mgmt', MGMT)
