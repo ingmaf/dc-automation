@@ -6,37 +6,101 @@ all:
 
   hosts:
     hq1dc1lf1:
-      ansible_host: 10.0.2.109
+      ansible_host: clab-server
       ansible_httpapi_port: 44301
       ansible_port: 2201
     hq1dc1lf2:
-      ansible_host: 10.0.2.109
+      ansible_host: clab-server
       ansible_httpapi_port: 44302
       ansible_port: 2202
     hq1dc1lf3:
-      ansible_host: 10.0.2.109
+      ansible_host: clab-server
       ansible_httpapi_port: 44303
       ansible_port: 2203
     hq1dc1lf4:
-      ansible_host: 10.0.2.109
+      ansible_host: clab-server
       ansible_httpapi_port: 44304
       ansible_port: 2204
+    hq1dc1lf5:
+      ansible_host: clab-server
+      ansible_httpapi_port: 44305
+      ansible_port: 2205
+    hq1dc1lf6:
+      ansible_host: clab-server
+      ansible_httpapi_port: 44306
+      ansible_port: 2206
+    hq1dc1lf7:
+      ansible_host: clab-server
+      ansible_httpapi_port: 44307
+      ansible_port: 2207
+    hq1dc1lf8:
+      ansible_host: clab-server
+      ansible_httpapi_port: 44308
+      ansible_port: 2208
     hq1dc1bl1:
-      ansible_host: 10.0.2.109
+      ansible_host: clab-server
       ansible_httpapi_port: 44331
       ansible_port: 2231
     hq1dc1bl2:
-      ansible_host: 10.0.2.109
+      ansible_host: clab-server
       ansible_httpapi_port: 44332
       ansible_port: 2232
     hq1dc1sp1:
-      ansible_host: 10.0.2.109
+      ansible_host: clab-server
       ansible_httpapi_port: 44333
       ansible_port: 2233
     hq1dc1sp2:
-      ansible_host: 10.0.2.109
+      ansible_host: clab-server
       ansible_httpapi_port: 44334
       ansible_port: 2234
+    server1:
+      ansible_host: clab-server
+      ansible_httpapi_port: 44341
+      ansible_port: 2241
+    server2:
+      ansible_host: clab-server
+      ansible_httpapi_port: 44342
+      ansible_port: 2242
+    server3:
+      ansible_host: clab-server
+      ansible_httpapi_port: 44343
+      ansible_port: 2243
+    server4:
+      ansible_host: clab-server
+      ansible_httpapi_port: 44344
+      ansible_port: 2244
+    server5:
+      ansible_host: clab-server
+      ansible_httpapi_port: 44345
+      ansible_port: 2245
+    server6:
+      ansible_host: clab-server
+      ansible_httpapi_port: 44346
+      ansible_port: 2246
+    server7:
+      ansible_host: clab-server
+      ansible_httpapi_port: 44347
+      ansible_port: 2247
+    server8:
+      ansible_host: clab-server
+      ansible_httpapi_port: 44348
+      ansible_port: 2248
+    server12:
+      ansible_host: clab-server
+      ansible_httpapi_port: 44351
+      ansible_port: 2251
+    server34:
+      ansible_host: clab-server
+      ansible_httpapi_port: 44352
+      ansible_port: 2252
+    server56:
+      ansible_host: clab-server
+      ansible_httpapi_port: 44353
+      ansible_port: 2253
+    server78:
+      ansible_host: clab-server
+      ansible_httpapi_port: 44354
+      ansible_port: 2254
 
   # Groups
 
@@ -55,6 +119,10 @@ all:
         hq1dc1lf2:
         hq1dc1lf3:
         hq1dc1lf4:
+        hq1dc1lf5:
+        hq1dc1lf6:
+        hq1dc1lf7:
+        hq1dc1lf8:
 
     border_leaves:
       hosts:
@@ -66,6 +134,21 @@ all:
         spines:
         leaves:
         border_leaves:
+
+    servers:
+      hosts:
+        server1:
+        server2:
+        server3:
+        server4:
+        server5:
+        server6:
+        server7:
+        server8:
+        server12:
+        server34:
+        server56:
+        server78:
 
     # By hardware
 
@@ -86,6 +169,14 @@ all:
         hq1dc1bl1:
         hq1dc1bl2:
 
+    arista_dcs7050sx3_24:
+      hosts:
+        hq1dc1lf4:
+        hq1dc1lf5:
+        hq1dc1lf6:
+        hq1dc1lf7:
+        hq1dc1lf8:
+
     # By NOS
 
     dellemc_sonic:
@@ -98,6 +189,14 @@ all:
         hq1dc1lf4:
         hq1dc1bl1:
         hq1dc1bl2:
+
+    arista_eos:
+      hosts:
+        hq1dc1lf4:
+        hq1dc1lf5:
+        hq1dc1lf6:
+        hq1dc1lf7:
+        hq1dc1lf8:
 
     # By NOS on hardware
 
@@ -117,3 +216,11 @@ all:
       hosts:
         hq1dc1bl1:
         hq1dc1bl2:
+
+    arista_eos_dcs7050sx3_24:
+      hosts:
+        hq1dc1lf4:
+        hq1dc1lf5:
+        hq1dc1lf6:
+        hq1dc1lf7:
+        hq1dc1lf8:
