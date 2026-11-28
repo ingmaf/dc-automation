@@ -4,19 +4,19 @@ dellemc_sonic_s5232f:
   kind: dell_sonic
   image: vrnetlab/dell_sonic:4.5.3
   labels:
-    ansible-group: dellemc_sonic_s5232f
+    ansible-group: dellemc_s5232f
 
 dellemc_sonic_s5224f:
   kind: dell_sonic
   image: vrnetlab/dell_sonic:4.5.3
   labels:
-    ansible-group: dellemc_sonic_s5224f
+    ansible-group: dellemc_s5224f
 
 dellemc_sonic_s5212f:
   kind: dell_sonic
   image: vrnetlab/dell_sonic:4.5.3
   labels:
-    ansible-group: dellemc_sonic_s5212f
+    ansible-group: dellemc_s5212f
 
 arista_eos_dcs7050sx3_24:
   kind: arista_ceos
